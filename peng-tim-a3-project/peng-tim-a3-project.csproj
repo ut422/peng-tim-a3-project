@@ -23,8 +23,4 @@
     <PackageReference Include="Raylib-cs" Version="6.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Game10003\process-work\" />
-  </ItemGroup>
-
 </Project>
