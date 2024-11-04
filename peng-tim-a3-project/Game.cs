@@ -3,30 +3,29 @@ using System;
 using System.Numerics;
 
 // The namespace your code is in.
-namespace Game10003
+namespace Game10003;
+
+/// <summary>
+///     Your game code goes inside this class!
+/// </summary>
+public class Game
 {
+    // Place your variables here:
+
+
     /// <summary>
-    ///     Your game code goes inside this class!
+    ///     Setup runs once before the game loop begins.
     /// </summary>
-    public class Game
+    public void Setup()
     {
-        // Place your variables here:
 
+    }
 
-        /// <summary>
-        ///     Setup runs once before the game loop begins.
-        /// </summary>
-        public void Setup()
-        {
+    /// <summary>
+    ///     Update runs every frame.
+    /// </summary>
+    public void Update()
+    {
 
-        }
-
-        /// <summary>
-        ///     Update runs every frame.
-        /// </summary>
-        public void Update()
-        {
-
-        }
     }
 }
