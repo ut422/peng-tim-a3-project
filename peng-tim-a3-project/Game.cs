@@ -1,31 +1,26 @@
-﻿// Include code libraries you need below (use the namespace).
-using System;
+﻿using System;
 using System.Numerics;
 
-// The namespace your code is in.
-namespace Game10003;
-
-/// <summary>
-///     Your game code goes inside this class!
-/// </summary>
-public class Game
+namespace Game10003
 {
-    // Place your variables here:
-
-
     /// <summary>
-    ///     Setup runs once before the game loop begins.
+    /// The main game class that handles game logic and rendering.
     /// </summary>
-    public void Setup()
+    public class Game
     {
+        
+        private const int WindowWidth = 800;
+        private const int WindowHeight = 600;
 
-    }
-
-    /// <summary>
-    ///     Update runs every frame.
-    /// </summary>
-    public void Update()
-    {
-
+        /// <summary>
+        /// Setup runs once before the game loop begins.
+        /// </summary>
+        public void Setup()
+        {
+            Window.SetSize(800, 600); // set the window size
+            ground = new Ground(new Vector2(0, 550), new Vector2(800, 50)); // ground at Y=550 with width 800 and height 50
+           
+        }
+        }
     }
 }
