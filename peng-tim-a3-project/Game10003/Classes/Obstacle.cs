@@ -6,26 +6,78 @@ using System.Numerics;
 namespace Game10003;
 
 /// <summary>
-///     Your game code goes inside this class!
+/// Your game code goes inside this class!
 /// </summary>
-public class Game
+public class Obstacle
 {
     // Place your variables here:
+    public Vector2 Position { get; private set; }
+    public Vector2 Size { get; }
+    public float Radius { get; }
+    public bool IsCircle { get; }
+    private float speed;
 
-
-    /// <summary>
-    ///     Setup runs once before the game loop begins.
-    /// </summary>
-    public void Setup()
+    // constructor for rectangle obstacles
+    public Obstacle(Vector2 position, Vector2 size, float speedValue)
     {
+        Position = position;
+        Size = size;
+        Radius = 0; // idk
+        IsCircle = false;
+        speed = speedValue;
+    }
 
+    // constructor for circle obstacles
+    public Obstacle(Vector2 position, float radius, float speedValue)
+    {
+        Position = position;
+        Size = Vector2.Zero; // idk: the sequel
+        Radius = radius;
+        IsCircle = true;
+        speed = speedValue;
     }
 
     /// <summary>
-    ///     Update runs every frame.
+    /// Update runs every frame.
     /// </summary>
     public void Update()
     {
+        // moves the obstacle
+        Position = new Vector2(Position.X + speed, Position.Y); // updates the position of the obstacle
 
+        // reset the position if it moves off-screen
+        if (IsCircle && Position.X + Radius * 2 < 0)
+        {
+            Position = new Vector2(800, Position.Y); // reset to the right side
+        }
+        else if (!IsCircle && Position.X + Size.X < 0)
+        {
+            Position = new Vector2(800, Position.Y); // reset to the right side
+        }
+    }
+
+    /// <summary>
+    /// Setup runs once before the game loop begins.
+    /// </summary>
+    public void DrawObstacle()
+    {
+        if (IsCircle)
+        {
+            DrawCircle();  // call a separate method for drawing circles
+        }
+        else
+        {
+            DrawRectangle();  // call a separate method for drawing rectangles
+        }
+    }
+
+    private void DrawCircle()
+    {
+        Draw.Circle(Position.X, Position.Y, Radius);
+    }
+
+    private void DrawRectangle()
+    {
+        Draw.Rectangle(Position.X, Position.Y, Size.X, Size.Y);
     }
 }
