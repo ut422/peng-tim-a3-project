@@ -15,8 +15,8 @@ namespace Game10003
         // player settings
         private Vector2 playerStartPosition = new Vector2(100, 500); // player starting position
         private float playerSize = 50f; // player size
-        private float playerJumpHeight = 30f; // jump height
-        private float playerGravity = 2f; // gravity applied to player
+        private float playerJumpHeight = 35f; // jump height
+        private float playerGravity = 1f; // gravity applied to player
 
         // rectangle obstacle settings
         private Vector2 rectangleObstaclePosition = new Vector2(800, 500); // rectangle positioned at player level
