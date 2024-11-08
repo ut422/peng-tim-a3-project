@@ -71,12 +71,12 @@ public class Obstacle
         }
     }
 
-    private void DrawCircle()
+    private void DrawCircle()  // draws the circle obstacle
     {
         Draw.Circle(Position.X, Position.Y, Radius);
     }
 
-    private void DrawRectangle()
+    private void DrawRectangle()  // draws the rectangle obstacle
     {
         Draw.Rectangle(Position.X, Position.Y, Size.X, Size.Y);
     }
